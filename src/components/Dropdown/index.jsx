@@ -72,7 +72,7 @@ export default ({
   return (
     <fieldset
       disabled={isDisabled}
-      onPointerLeave={() => setActive(false)}
+      onMouseLeave={() => setActive(false)}
       className={`dropdown ${className || ''} ${isActive ? 'active' : ''} ${multiple ? 'multiple' : ''}`}
     >
       <button
