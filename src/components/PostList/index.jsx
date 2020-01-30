@@ -44,7 +44,7 @@ export default ({ data }) => {
               onChange={setAuthorFilter}
             />
             <button
-              className={`btn-order ${descOrdered ? 'desc' : 'asc'}`}
+              className={`btn order ${descOrdered ? 'desc' : 'asc'}`}
               title={`Order ${descOrdered ? 'DESC' : 'ASC'}`}
               onClick={() => setDescOrdered(!descOrdered)}
             >

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 
+import Hero from '../Hero';
 import LatestList from '../LatestList';
 import PostList from '../PostList';
 import { PostsContext } from '../../store/Posts';
@@ -11,6 +12,7 @@ export default () => {
 
   return (
     <main>
+      <Hero />
       <LatestList data={sortedDescPosts.slice(0, 3)} />
       <PostList data={sortedDescPosts} />
     </main>

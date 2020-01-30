@@ -75,7 +75,11 @@ export default ({
       onPointerLeave={() => setActive(false)}
       className={`dropdown ${className || ''} ${isActive ? 'active' : ''} ${multiple ? 'multiple' : ''}`}
     >
-      <button className="trigger" onClick={handleClick} title={`${selectionText}${offsetText ? ` ${offsetText}` : ''}`}>
+      <button
+        className="btn trigger"
+        onClick={handleClick}
+        title={`${selectionText}${offsetText ? ` ${offsetText}` : ''}`}
+      >
         {selectionText}
         {offsetText && <strong>{offsetText}</strong>}
         <AngleDown />

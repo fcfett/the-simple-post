@@ -41,165 +41,182 @@ button {
 #app {
   display: flex;
   flex-flow: column nowrap;
-}
 
-#app > main {
-  flex: 1;
-  line-height: 2rem;
-  font-size: 20px;
-  padding: 0 30px;
-}
-
-#app > header > h1,
-#app > main > section > header > h1 {
-  font-family: 'Berkshire Swash', cursive;
-  font-weight: 400;
-}
-
-#app > main,
-#app > header > h1,
-#app > footer > small {
-  display: block;
-  margin: 0 auto;
-  max-width: 1024px;
-}
-
-#app > header,
-#app > footer {
-  text-align: center;
-}
-
-#app > header {
-  background-color: #000;
-  color: #fff;
-  padding: 20px 30px;
-}
-
-#app > footer {
-  background-color: #ddd;
-  color: #333;
-  padding: 10px 30px;
-  a {
-    font-weight: 700;
+  .hero h1,
+  & > header > h1,
+  & > main > section > header > h1 {
+    font-family: 'Berkshire Swash', cursive;
+    font-weight: 400;
   }
-}
 
-#app > main > section {
-  padding: 80px 0;
+  & > main,
+  & > header > h1,
+  & > footer > small {
+    display: block;
+    margin: 0 auto;
+    max-width: 1024px;
+  }
 
-  &:not(:last-of-type) {
-    border-bottom: 1px solid #000;
+  & > header,
+  & > footer {
+    text-align: center;
   }
 
   & > header {
-    display: flex;
-    flex-wrap: wrap;
-
-    & > h1 {
-      font-size: 3rem;
-      line-height: 1em;
-      display: inline-block;
-      position: relative;
-      margin: 5px 0;
-
-      &:after {
-        content: '';
-        border-radius: 6px;
-        display: block;
-        height: 6px;
-        width: 32%;
-        background-color: #000;
-        margin: 4px 1% 0;
-      }
-    }
-
-    & > aside {
-      margin: 5px 5px 15px auto;
-      display: flex;
-      align-items: center;
-      flex: 1 1 auto;
-      justify-content: flex-end;
-
-      & > * {
-        margin: 5px;
-        flex: 0 1 auto;
-      }
-    }
-  }
-
-  & > ul {
-    list-style: none;
-
-    &.latest {
-      padding: 30px 0;
-
-      & > li {
-        padding: 30px 0 0;
-      }
-
-      a {
-        font-size: 1.5em;
-        font-weight: 500;
-      }
-    }
-
-    &.posts li.post {
-      padding: 60px 0;
-      &:not(:last-of-type) {
-        border-bottom: 1px solid #ccc;
-      }
-    }
-  }
-}
-
-#app > main .post {
-  h1 {
-    font-weight: 500;
-  }
-  & > main {
-    margin: 20px 0;
-    font-weight: 300;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 30px;
   }
 
   & > footer {
-    text-align: right;
-    font-size: 16px;
-    font-weight: 700;
-    color: #666;
-  }
-}
-
-#app .btn-order {
-  background-color: #000;
-  border: 0;
-  border-radius: 42px;
-  height: 42px;
-  width: 42px;
-  padding: 10px;
-  transition: box-shadow 0.25s ease-out;
-
-  &:focus,
-  &:hover {
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+    background-color: #ddd;
+    color: #333;
+    padding: 10px 30px;
+    a {
+      font-weight: 700;
+    }
   }
 
-  svg {
-    width: 20px;
-    fill: #fff;
-    transform: rotate(-90deg);
-    transition: transform 0.15s ease-out;
+  a {
+    color: #000;
+    transition: color 0.25s ease-out;
+    &:hover,
+    &:focus {
+      color: #666;
+    }
   }
 
-  &.asc svg {
-    transform: rotate(90deg);
-  }
-}
+  .btn {
+    background-color: #000;
+    border: none;
+    border-radius: 42px;
+    color: #fff;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s ease-out;
+    transition-property: color, background-color, box-shadow;
 
-#app a {
-  color: #000;
-  transition: color 0.25s ease-out;
-  &:hover,
-  &:focus {
-    color: #666;
+    svg {
+      fill: #fff;
+      transition: transform 0.15s ease-out;
+    }
+
+    &.order {
+      height: 42px;
+      width: 42px;
+      padding: 10px;
+
+      svg {
+        width: 20px;
+        transform: rotate(-90deg);
+      }
+
+      &.asc svg {
+        transform: rotate(90deg);
+      }
+    }
+
+    &:focus,
+    &:hover {
+      box-shadow: 0 4px 18px #999;
+    }
+  }
+
+  & > main {
+    flex: 1;
+    line-height: 2rem;
+    font-size: 20px;
+    padding: 0 30px;
+
+    & > section {
+      padding: 80px 0;
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #000;
+      }
+
+      & > header {
+        display: flex;
+        flex-wrap: wrap;
+
+        & > h1 {
+          font-size: 3rem;
+          line-height: 1em;
+          display: inline-block;
+          position: relative;
+          margin: 5px 0;
+
+          &:after {
+            content: '';
+            border-radius: 6px;
+            display: block;
+            height: 6px;
+            width: 32%;
+            background-color: #000;
+            margin: 4px 1% 0;
+          }
+        }
+
+        & > aside {
+          margin: 5px 5px 15px auto;
+          display: flex;
+          align-items: center;
+          flex: 1 1 auto;
+          justify-content: flex-end;
+
+          @media (max-width: 520px) {
+            justify-content: center;
+          }
+
+          & > * {
+            margin: 5px;
+            flex: 0 1 auto;
+          }
+        }
+      }
+
+      & > ul {
+        list-style: none;
+
+        &.latest {
+          padding: 30px 0;
+
+          & > li {
+            padding: 30px 0 0;
+          }
+
+          a {
+            font-size: 1.5em;
+            font-weight: 500;
+          }
+        }
+
+        &.posts li.post {
+          padding: 60px 0;
+
+          &:not(:last-of-type) {
+            border-bottom: 1px solid #ccc;
+          }
+
+          h1 {
+            font-weight: 500;
+          }
+
+          & > main {
+            margin: 20px 0;
+            font-weight: 300;
+          }
+
+          & > footer {
+            text-align: right;
+            font-size: 16px;
+            font-weight: 700;
+            color: #666;
+          }
+        }
+      }
+    }
   }
 }

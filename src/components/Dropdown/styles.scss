@@ -55,7 +55,7 @@
   button {
     align-self: center;
     border: none;
-    background: none;
+    background: inherit;
     font-size: inherit;
     overflow: hidden;
     display: flex;
@@ -67,18 +67,6 @@
 
   .trigger {
     background-color: #000;
-    border-radius: 30px;
-    color: #fff;
-    display: flex;
-    position: relative;
-    align-items: center;
-    //z-index: 1;
-    transition: box-shadow 0.25s ease-out;
-
-    &:focus,
-    &:hover {
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-    }
 
     strong {
       margin: 0 0 0 4px;
@@ -86,10 +74,8 @@
     }
 
     svg {
-      fill: #fff;
       width: 16px;
       margin: 0 -6px 0 auto;
-      transition: transform 0.15s ease-out;
     }
   }
 
