@@ -1,0 +1,141 @@
+.dropdown {
+  border: none;
+  display: inline-block;
+  font-size: 16px;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  max-width: 240px;
+
+  &:not(.active) {
+    .options {
+      height: 0;
+      opacity: 0;
+      transform: translate(-50%, -20px);
+      visibility: hidden;
+    }
+  }
+
+  &.active .trigger svg {
+    transform: rotate(180deg);
+  }
+
+  &.multiple .options button {
+    &:before {
+      border: 2px solid #999;
+      border-radius: 4px;
+      box-sizing: border-box;
+      color: #fff;
+      content: '';
+      display: inline-block;
+      font-size: 20px;
+      line-height: 16px;
+      height: 20px;
+      margin-right: 8px;
+      min-width: 20px;
+      text-shadow: 1px 1px 2px #888;
+      transition: 0.25s ease-out;
+      transition-property: background-color, border-color;
+      width: 20px;
+    }
+
+    &.selected:before {
+      content: '✔';
+      border-color: #999;
+      background-color: #999;
+    }
+
+    &.partial:before {
+      content: '';
+      border-color: #999;
+      background-color: #999;
+    }
+  }
+
+  button {
+    align-self: center;
+    border: none;
+    background: none;
+    font-size: inherit;
+    overflow: hidden;
+    display: flex;
+    padding: 10px 26px;
+    width: 100%;
+    transition: 0.25s ease-out;
+    transition-property: color, background-color, box-shadow;
+  }
+
+  .trigger {
+    background-color: #000;
+    border-radius: 30px;
+    color: #fff;
+    display: flex;
+    position: relative;
+    align-items: center;
+    //z-index: 1;
+    transition: box-shadow 0.25s ease-out;
+
+    &:focus,
+    &:hover {
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+    }
+
+    strong {
+      margin: 0 0 0 4px;
+      font-weight: 700;
+    }
+
+    svg {
+      fill: #fff;
+      width: 16px;
+      margin: 0 -6px 0 auto;
+      transition: transform 0.15s ease-out;
+    }
+  }
+
+  .options {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    overflow: visible;
+    padding: 10px 0;
+    transform: translateX(-50%);
+    transition: 0.25s ease-out;
+    transition-property: transform, opacity, height;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: #fff;
+      top: 10px;
+      right: 0;
+      bottom: 10px;
+      left: 0;
+      z-index: -1;
+      border-radius: 4px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    ul {
+      list-style: none;
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 0;
+
+      li:first-of-type button {
+        border-radius: 4px 4px 0 0;
+      }
+      li:last-of-type button {
+        border-radius: 0 0 4px 4px;
+      }
+
+      button {
+        &:hover,
+        &:focus {
+          background-color: #000;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
