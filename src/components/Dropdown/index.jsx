@@ -9,14 +9,14 @@ export default ({
   placeholder = 'Select',
   multiple = false,
   dataLabel,
-  value,
-  disabled,
+  value = [],
+  disabled = false,
   onChange,
   className,
 }) => {
   const [isActive, setActive] = useState(false);
-  const [isDisabled, setDisabled] = useState(disabled || false);
-  const [selected, setSelected] = useState(value || []);
+  const [isDisabled, setDisabled] = useState(disabled);
+  const [selected, setSelected] = useState(value);
 
   const isSelected = (value) => selected.includes(value);
   const hasData = data.length > 0;
@@ -66,8 +66,8 @@ export default ({
   const offsetText = !isAllSelected && selected.length > 1 && `+ ${selected.length - 1}`;
 
   useEffect(() => {
-    if (!hasData) setDisabled(true);
-  }, []); //eslint-disable-line
+    setDisabled(!hasData);
+  }, [data]); //eslint-disable-line
 
   return (
     <fieldset

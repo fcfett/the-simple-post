@@ -1,0 +1,16 @@
+.no-content {
+  align-items: center;
+  color: #999;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 60px 0;
+  font-weight: 700;
+
+  h2 {
+    font-weight: 100;
+    font-size: 4em;
+    line-height: 1.5em;
+    margin: -20px 0 10px;
+  }
+}

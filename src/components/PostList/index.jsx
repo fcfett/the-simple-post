@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 
 import Post from '../Post';
 import Dropdown from '../Dropdown';
+import NoContent from '../NoContent';
 import { AuthorsContext } from '../../store/Authors';
 import { ReactComponent as Arrow } from '../../assets/icons/arrow.svg';
 
@@ -18,7 +19,7 @@ export default ({ data }) => {
   const hasPosts = posts.length > 0;
 
   useEffect(() => {
-    setPosts(data);
+    setPosts([]);
   }, [data]);
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export default ({ data }) => {
           ))}
         </ul>
       ) : (
-        <article>No Posts</article>
+        <NoContent />
       )}
     </section>
   );
