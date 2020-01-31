@@ -19,7 +19,7 @@ export default ({ data }) => {
   const hasPosts = posts.length > 0;
 
   useEffect(() => {
-    setPosts([]);
+    setPosts(data);
   }, [data]);
 
   useEffect(() => {
